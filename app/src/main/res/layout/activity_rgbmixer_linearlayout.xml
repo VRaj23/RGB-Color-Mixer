@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:weightSum="100"
+    android:layout_height="match_parent">
+
+    <SurfaceView
+        android:id="@+id/sv_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="60"
+        android:layout_marginBottom="10dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="40"
+        android:orientation="vertical">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/tv_hash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/tv_hexRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RR"
+                android:textColor="#FF0000"
+                app:layout_constraintLeft_toRightOf="@id/tv_hash"
+                app:layout_constraintTop_toBottomOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/tv_hexBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RR"
+                android:textColor="#0000FF"
+                app:layout_constraintLeft_toRightOf="@+id/tv_hexGreen"
+                app:layout_constraintRight_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/tv_hexGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RR"
+                android:textColor="#00FF00"
+                app:layout_constraintLeft_toRightOf="@id/tv_hexRed"
+                app:layout_constraintRight_toLeftOf="@id/tv_hexBlue"
+                app:layout_constraintTop_toBottomOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+
+
+            <TextView
+                android:id="@+id/valueRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="255 "
+                android:textColor="#FF0000"
+                app:layout_constraintLeft_toRightOf="@id/tv_hexBlue"
+                app:layout_constraintRight_toLeftOf="@+id/valueGreen"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/valueGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="255 "
+                android:textColor="#00FF00"
+                app:layout_constraintLeft_toRightOf="@id/valueRed"
+                app:layout_constraintRight_toLeftOf="@+id/valueBlue"
+                app:layout_constraintTop_toBottomOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/valueBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="255 "
+                android:textColor="#0000FF"
+                app:layout_constraintRight_toLeftOf="@+id/tv_percentRed"
+                app:layout_constraintLeft_toRightOf="@id/valueGreen"
+                app:layout_constraintTop_toBottomOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/tv_percentRed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100%"
+                android:textColor="#FF0000"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/tv_percentGreen"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/tv_percentGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100%"
+                android:textColor="#00FF00"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/tv_percentBlue"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/tv_percentBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100%"
+                android:textColor="#0000FF"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:layout_marginTop="15dp"
+            >
+
+            <Button
+                android:id="@+id/bt_increase_red"
+                android:text="+"
+                android:layout_weight="45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <SeekBar
+                android:id="@+id/sb_Red"
+                android:layout_weight="10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="255"
+                android:progress="255"
+                />
+
+            <Button
+                android:id="@+id/bt_decrease_red"
+                android:text="-"
+                android:layout_weight="45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:layout_marginTop="15dp"
+            >
+
+            <Button
+                android:id="@+id/bt_increase_green"
+                android:text="+"
+                android:layout_weight="45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <SeekBar
+                android:id="@+id/sb_Green"
+                android:layout_weight="10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="255"
+                android:progress="255"/>
+
+            <Button
+                android:id="@+id/bt_decrease_green"
+                android:text="-"
+                android:layout_weight="45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            android:layout_marginTop="15dp"
+            >
+
+            <Button
+                android:id="@+id/bt_increase_blue"
+                android:text="+"
+                android:layout_weight="45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <SeekBar
+                android:id="@+id/sb_Blue"
+                android:layout_weight="10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="255"
+                android:progress="255"
+                />
+
+            <Button
+                android:id="@+id/bt_decrease_blue"
+                android:text="-"
+                android:layout_weight="45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
