@@ -18,7 +18,7 @@ public class RGBMixerActivity extends AppCompatActivity implements SeekBar.OnSee
     TextView hexRed,hexGreen,hexBlue,valueRed,valueGreen,valueBlue,percentRed,percentGreen,percentBlue;
     SeekBar seekBarRed,seekBarGreen,seekBarBlue;
     Button iRed,dRed,iGreen,dGreen,iBlue,dBlue;
-    static int red = 255, green = 355, blue = 255;
+    static int red = 255, green = 255, blue = 255;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class RGBMixerActivity extends AppCompatActivity implements SeekBar.OnSee
         setContentView(R.layout.activity_rgbmixer_linearlayout);
         initViews();
         initListener();
-        setSurfaceViewColor();
+        sv_color.setBackgroundColor(Color.rgb(red,green,blue));
     }
 
     void initViews(){
@@ -70,19 +70,36 @@ public class RGBMixerActivity extends AppCompatActivity implements SeekBar.OnSee
 
     }
 
-    void setSurfaceViewColor(){
-        sv_color.setBackgroundColor(Color.rgb(red,green,blue));
-    }
-
     public String int2hex(int x){
         String c=Integer.toHexString(x);
-        return c;
+        return c.toUpperCase();
     }
 
     public String int2percent(int x){
         float p=(float)(x/2.55);
         DecimalFormat df=new DecimalFormat("###.##");
         return df.format(p);
+    }
+
+    void changeRed(){
+        sv_color.setBackgroundColor(Color.rgb(red,green,blue));
+        hexRed.setText(int2hex(red));
+        valueRed.setText(Integer.toString(red));
+        percentRed.setText(int2percent(red));
+    }
+
+    void changeGreen(){
+        sv_color.setBackgroundColor(Color.rgb(red,green,blue));
+        hexGreen.setText(int2hex(green));
+        valueGreen.setText(Integer.toString(green));
+        percentGreen.setText(int2percent(green));
+    }
+
+    void changeBlue(){
+        sv_color.setBackgroundColor(Color.rgb(red,green,blue));
+        hexBlue.setText(int2hex(blue));
+        valueBlue.setText(Integer.toString(blue));
+        percentBlue.setText(int2percent(blue));
     }
 
 
@@ -92,17 +109,17 @@ public class RGBMixerActivity extends AppCompatActivity implements SeekBar.OnSee
             case R.id.sb_Red:
                 Log.d("SeekBar Red ",String.valueOf(progress));
                 red = progress;
-                setSurfaceViewColor();
+                changeRed();
                 break;
             case R.id.sb_Green:
                 Log.d("SeekBar Green ",String.valueOf(progress));
                 green = progress;
-                setSurfaceViewColor();
+                changeGreen();
                 break;
             case R.id.sb_Blue:
                 Log.d("SeekBar Blue ",String.valueOf(progress));
                 blue = progress;
-                setSurfaceViewColor();
+                changeBlue();
                 break;
             default:
                 break;
@@ -124,16 +141,40 @@ public class RGBMixerActivity extends AppCompatActivity implements SeekBar.OnSee
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.bt_increase_red:
+                if(red < 256) {
+                    red++;
+                    changeRed();
+                }
                 break;
             case R.id.bt_decrease_red:
+                if(red > 0) {
+                    red--;
+                    changeRed();
+                }
                 break;
             case R.id.bt_increase_green:
+                if(green < 256) {
+                    green++;
+                    changeGreen();
+                }
                 break;
             case R.id.bt_decrease_green:
+                if(green > 0) {
+                    green--;
+                    changeGreen();
+                }
                 break;
             case R.id.bt_increase_blue:
+                if(blue < 256) {
+                    blue++;
+                    changeBlue();
+                }
                 break;
             case R.id.bt_decrease_blue:
+                if(blue > 0) {
+                    blue--;
+                    changeBlue();
+                }
                 break;
             default:
                 break;
