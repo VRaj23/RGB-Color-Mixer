@@ -10,14 +10,14 @@
         android:id="@+id/sv_color"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="60"
+        android:layout_weight="55"
         android:layout_marginBottom="10dp"
         />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="40"
+        android:layout_weight="45"
         android:orientation="vertical">
 
         <android.support.constraint.ConstraintLayout
@@ -164,6 +164,8 @@
                 android:layout_height="wrap_content"
                 android:max="255"
                 android:progress="255"
+                android:progressDrawable="@drawable/progress_bar_red"
+                android:paddingTop="15dp"
                 />
 
             <Button
@@ -196,7 +198,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:max="255"
-                android:progress="255"/>
+                android:progress="255"
+                android:progressDrawable="@drawable/progress_bar_green"
+                android:paddingTop="15dp"
+                />
 
             <Button
                 android:id="@+id/bt_decrease_green"
@@ -229,6 +234,8 @@
                 android:layout_height="wrap_content"
                 android:max="255"
                 android:progress="255"
+                android:progressDrawable="@drawable/progress_bar_blue"
+                android:paddingTop="15dp"
                 />
 
             <Button

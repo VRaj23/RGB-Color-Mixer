@@ -141,39 +141,45 @@ public class RGBMixerActivity extends AppCompatActivity implements SeekBar.OnSee
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.bt_increase_red:
-                if(red < 256) {
+                if(red < 255) {
                     red++;
                     changeRed();
+                    seekBarRed.setProgress(red);
                 }
                 break;
             case R.id.bt_decrease_red:
                 if(red > 0) {
                     red--;
                     changeRed();
+                    seekBarRed.setProgress(red);
                 }
                 break;
             case R.id.bt_increase_green:
-                if(green < 256) {
+                if(green < 255) {
                     green++;
                     changeGreen();
+                    seekBarGreen.setProgress(green);
                 }
                 break;
             case R.id.bt_decrease_green:
                 if(green > 0) {
                     green--;
                     changeGreen();
+                    seekBarGreen.setProgress(green);
                 }
                 break;
             case R.id.bt_increase_blue:
-                if(blue < 256) {
+                if(blue < 255) {
                     blue++;
                     changeBlue();
+                    seekBarBlue.setProgress(blue);
                 }
                 break;
             case R.id.bt_decrease_blue:
                 if(blue > 0) {
                     blue--;
                     changeBlue();
+                    seekBarBlue.setProgress(blue);
                 }
                 break;
             default:
