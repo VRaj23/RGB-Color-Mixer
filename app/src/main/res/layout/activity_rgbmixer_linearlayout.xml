@@ -152,11 +152,13 @@
             >
 
             <Button
-                android:id="@+id/bt_increase_red"
-                android:text="+"
+                android:id="@+id/bt_decrease_red"
                 android:layout_weight="45"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_decrease"
+                />
+
             <SeekBar
                 android:id="@+id/sb_Red"
                 android:layout_weight="10"
@@ -169,11 +171,14 @@
                 />
 
             <Button
-                android:id="@+id/bt_decrease_red"
-                android:text="-"
+                android:id="@+id/bt_increase_red"
                 android:layout_weight="45"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_increase"
+                />
+
+
 
 
         </LinearLayout>
@@ -186,12 +191,16 @@
             android:layout_marginTop="15dp"
             >
 
+
             <Button
-                android:id="@+id/bt_increase_green"
-                android:text="+"
+                android:id="@+id/bt_decrease_green"
+                android:background="@drawable/ic_decrease"
                 android:layout_weight="45"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+
+
             <SeekBar
                 android:id="@+id/sb_Green"
                 android:layout_weight="10"
@@ -204,8 +213,8 @@
                 />
 
             <Button
-                android:id="@+id/bt_decrease_green"
-                android:text="-"
+                android:id="@+id/bt_increase_green"
+                android:background="@drawable/ic_increase"
                 android:layout_weight="45"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -222,11 +231,12 @@
             >
 
             <Button
-                android:id="@+id/bt_increase_blue"
-                android:text="+"
+                android:id="@+id/bt_decrease_blue"
+                android:background="@drawable/ic_decrease"
                 android:layout_weight="45"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
             <SeekBar
                 android:id="@+id/sb_Blue"
                 android:layout_weight="10"
@@ -239,11 +249,13 @@
                 />
 
             <Button
-                android:id="@+id/bt_decrease_blue"
-                android:text="-"
+                android:id="@+id/bt_increase_blue"
+                android:background="@drawable/ic_increase"
                 android:layout_weight="45"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+
 
 
         </LinearLayout>

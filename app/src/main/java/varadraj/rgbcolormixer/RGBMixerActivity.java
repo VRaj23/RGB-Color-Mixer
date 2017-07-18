@@ -78,7 +78,7 @@ public class RGBMixerActivity extends AppCompatActivity implements SeekBar.OnSee
     public String int2percent(int x){
         float p=(float)(x/2.55);
         DecimalFormat df=new DecimalFormat("###.##");
-        return df.format(p);
+        return df.format(p)+"%";
     }
 
     void changeRed(){
